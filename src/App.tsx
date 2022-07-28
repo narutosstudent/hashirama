@@ -1,3 +1,5 @@
 export const App = () => {
-  return <div>Hello World</div>
+  return (
+    <p class="py-20 text-center text-4xl text-green-700">Hello tailwind!</p>
+  )
 }
