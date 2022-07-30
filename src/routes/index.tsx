@@ -1,3 +1,5 @@
+import { useNavigate } from 'solid-app-router'
+
 type SubmitEvent = Event & {
   submitter: HTMLElement
 } & {
@@ -5,11 +7,15 @@ type SubmitEvent = Event & {
   target: Element
 }
 
-export const Home = () => {
+export default function Index() {
+  const navigate = useNavigate()
+
   const handleSubmit = (event: SubmitEvent) => {
     event.preventDefault()
 
-    console.log(event.currentTarget.search.value)
+    const searchValue = event.currentTarget.search.value
+
+    navigate(`/search?query=${searchValue}`)
   }
 
   return (
